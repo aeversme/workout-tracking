@@ -4,9 +4,11 @@ import secrets
 import datetime as dt
 
 
-def user_inputs():
-    user_name = input('Enter your name to search for your data: ').lower()
-    user_data = data.lookup_user_data(user_name)
+def get_user_inputs():
+    user_data = None
+    while user_data is None:
+        user_name = input('Enter your name to search for your data: ').lower()
+        user_data = data.lookup_user_data(user_name)
     exercise_input = input('Tell me which exercises you did: ')
     return user_data, exercise_input
 
